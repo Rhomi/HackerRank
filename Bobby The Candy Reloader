@@ -1,0 +1,18 @@
+#!/bin/python3
+
+import sys
+n,t = input().strip().split(' ')
+n,t = [int(n),int(t)]
+c = list(map(int, input().strip().split(' ')))
+# your code goes here
+def bobby(count):
+    candies_added = 0
+    for i in range(t):
+        count = count - c[i]
+        if count < 5:
+            if (t-i) != 1:
+                candies_added = candies_added+(n-count)
+                count = count + (n-count)
+    print(candies_added)
+            
+bobby(n)            
